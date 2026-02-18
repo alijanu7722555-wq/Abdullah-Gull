@@ -46,10 +46,31 @@
         .hero p { font-size: 18px; color: #ccc; max-width: 800px; }
 
         /* --- Slider Gap Cover --- */
-        .main-container { width: 100%; margin-top: -30px !important; position: relative; z-index: 99; background: var(--white); }
-        .slider-wrapper { height: 110px; overflow: hidden !important; background: transparent !important; }
-        a[href*="elfsight.com"] { display: none !important; opacity: 0 !important; visibility: hidden !important; }
+        <div class="slider-outer-container">
+  <div class="slider-inner-box">
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-db523cb0-3ec2-4f87-a8ee-975fa08a02fa" data-elfsight-app-lazy></div>
+  </div>
+</div>
 
+<style>
+  .slider-outer-container {
+    width: 100%;
+    margin: 20px 0;
+    overflow: hidden;
+    background: transparent; 
+  }
+
+  .slider-inner-box {
+    height: 150px; /* Isay adjust kar sakte hain agar logos chote ya bare dikhane hon */
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slider-inner-box a[href*="elfsight.com"] {
+    display: none !important;
+  }
+</style>
         /* Skill Grid */
         section { padding: 80px 8%; }
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
