@@ -3,166 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdullah Gull | Amazon Alpha Specialist</title>
+    <title>Abdullah Gull | Amazon Predator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <style>
         :root {
-            --accent: #ff9900;
-            --bg: #0a0a0a;
-            --glass: rgba(255, 255, 255, 0.05);
-            --text: #ffffff;
+            --neon: #ff9900;
+            --neon-glow: rgba(255, 153, 0, 0.6);
+            --bg-black: #050505;
+            --card-bg: rgba(20, 20, 20, 0.8);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
+        body { background: var(--bg-black); color: white; font-family: 'Segoe UI', Roboto, sans-serif; overflow-x: hidden; }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #111; }
-        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
+        /* Background Particle Effect */
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
 
-        /* Header / Nav */
+        /* Floating Header */
         header {
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            backdrop-filter: blur(15px);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 30px 10%; display: flex; justify-content: space-between; align-items: center;
+            position: fixed; width: 100%; top: 0; z-index: 100;
         }
-        .logo { font-family: 'Syncopate', sans-serif; font-size: 1.5rem; color: var(--accent); text-decoration: none; }
-        
+        .logo { font-size: 28px; font-weight: 900; letter-spacing: 2px; color: var(--neon); text-shadow: 0 0 10px var(--neon-glow); }
+
         /* Hero Section */
         .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 8%;
-            background: radial-gradient(circle at 80% 20%, rgba(255, 153, 0, 0.15) 0%, transparent 40%);
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; background: radial-gradient(circle, rgba(255,153,0,0.05) 0%, transparent 70%);
         }
-        .hero h2 { color: var(--accent); letter-spacing: 5px; font-weight: 300; margin-bottom: 10px; }
-        .hero h1 { font-size: clamp(40px, 8vw, 80px); font-weight: 900; line-height: 1; margin-bottom: 20px; }
-        .hero p { max-width: 600px; font-size: 1.2rem; color: #aaa; border-left: 3px solid var(--accent); padding-left: 20px; }
-
-        /* --- THE ADVANCED SLIDER (As requested) --- */
-        .brands-container {
-            background: #111;
-            padding: 50px 0;
-            border-top: 1px solid #222;
-            border-bottom: 1px solid #222;
-            overflow: hidden;
-            position: relative;
-        }
-        .brands-container::before, .brands-container::after {
-            content: ""; height: 100%; width: 200px; position: absolute; z-index: 2; top: 0;
-        }
-        .brands-container::before { left: 0; background: linear-gradient(to right, var(--bg), transparent); }
-        .brands-container::after { right: 0; background: linear-gradient(to left, var(--bg), transparent); }
-
-        .slider-track {
-            display: flex;
-            width: calc(250px * 14);
-            animation: scroll 30s linear infinite;
-        }
-        .slider-track img {
-            height: 60px;
-            margin: 0 60px;
-            filter: grayscale(1) invert(1);
-            opacity: 0.6;
+        .hero h1 { 
+            font-size: clamp(50px, 10vw, 100px); font-weight: 900; line-height: 0.9;
+            text-transform: uppercase; -webkit-text-stroke: 1px var(--neon); color: transparent;
             transition: 0.5s;
         }
-        .slider-track img:hover { filter: grayscale(0) invert(0); opacity: 1; transform: scale(1.1); }
+        .hero h1 span { color: var(--neon); text-shadow: 0 0 20px var(--neon-glow); }
+        .hero p { font-size: 1.5rem; color: #888; margin-top: 20px; letter-spacing: 5px; }
 
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-250px * 7)); }
+        /* --- THE INFINITE LOGO WALL --- */
+        .logo-wall {
+            background: rgba(255,255,255,0.02); padding: 40px 0; border-top: 1px solid var(--neon); border-bottom: 1px solid var(--neon);
+            overflow: hidden; box-shadow: 0 0 20px var(--neon-glow); transform: rotate(-2deg); width: 110%; margin-left: -5%;
+        }
+        .wall-track { display: flex; width: calc(250px * 14); animation: scrollWall 20s linear infinite; }
+        .wall-track img { height: 50px; margin: 0 60px; filter: drop-shadow(0 0 5px var(--neon)); }
+
+        @keyframes scrollWall { 
+            0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 7)); } 
         }
 
-        /* Stats Section */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 80px 8%;
+        /* Expert Cards */
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 100px 10%; }
+        .card {
+            background: var(--card-bg); padding: 50px; border-radius: 5px; border-left: 5px solid var(--neon);
+            transition: 0.4s; position: relative; overflow: hidden;
         }
-        .stat-card {
-            background: var(--glass);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            transition: 0.4s;
-        }
-        .stat-card:hover { background: rgba(255, 153, 0, 0.1); border-color: var(--accent); transform: translateY(-10px); }
-        .stat-card h3 { font-size: 3rem; color: var(--accent); margin-bottom: 10px; }
+        .card:hover { transform: translateY(-15px) scale(1.05); background: #111; box-shadow: 10px 10px 0px var(--neon); }
+        .card h3 { font-size: 24px; margin-bottom: 15px; color: var(--neon); }
+        .card img { width: 100%; border: 1px solid #333; margin-top: 20px; }
 
-        /* Services */
-        .services { padding: 100px 8%; }
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+        /* Neon Button */
+        .neon-btn {
+            padding: 20px 50px; border: 2px solid var(--neon); color: var(--neon); text-decoration: none;
+            font-weight: 900; letter-spacing: 3px; position: relative; transition: 0.5s; overflow: hidden;
         }
-        .service-card {
-            background: #161616;
-            padding: 40px;
-            border-radius: 30px;
-            position: relative;
-            overflow: hidden;
-        }
-        .service-card i { font-size: 3rem; color: var(--accent); margin-bottom: 20px; }
-        .service-card h4 { font-size: 1.5rem; margin-bottom: 15px; }
-        .service-card img { width: 100%; border-radius: 15px; margin-top: 20px; }
+        .neon-btn:hover { background: var(--neon); color: black; box-shadow: 0 0 50px var(--neon); }
 
-        /* CTA */
-        .cta {
-            background: var(--accent);
-            padding: 80px 8%;
-            text-align: center;
-            color: #000;
-            margin: 0 8% 100px;
-            border-radius: 40px;
-        }
-        .cta h2 { font-size: 3rem; font-weight: 900; }
-        .btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 15px 40px;
-            background: #000;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 50px;
-            transition: 0.3s;
-        }
-        .btn:hover { transform: scale(1.1); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
-
+        footer { text-align: center; padding: 50px; color: #444; font-size: 12px; }
     </style>
 </head>
 <body>
 
+    <div id="particles-js"></div>
+
     <header>
-        <a href="#" class="logo">ABDULLAH.G</a>
-        <nav>
-            <a href="https://wa.me/YOURNUMBER" class="btn" style="padding: 10px 20px; margin:0">HIRE ME</a>
-        </nav>
+        <div class="logo">AG_SYSTEMS</div>
+        <a href="#" class="neon-btn">CONTACT_OPERATOR</a>
     </header>
 
     <section class="hero">
-        <h2>AMAZON FBA SPECIALIST</h2>
-        <h1>Building Brands,<br><span>Scaling Success.</span></h1>
-        <p>I help e-commerce brands dominate the Amazon marketplace with data-driven PPC strategies and elite listing optimization.</p>
+        <p>AMAZON FBA ARCHITECT</p>
+        <h1>Building <span>Brands</span></h1>
+        <h1>Scaling <span>Success</span></h1>
     </section>
 
-    <div class="brands-container">
-        <div class="slider-track">
+    <div class="logo-wall">
+        <div class="wall-track">
             <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Logo">
             <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Logo">
             <img src="https://i.ibb.co/S7XkjhHj/Untitled-design.png" alt="Logo">
@@ -173,49 +99,39 @@
         </div>
     </div>
 
-    <section class="stats">
-        <div class="stat-card">
-            <h3>$727K+</h3>
-            <p>Total Sales Managed</p>
+    <section class="grid-container">
+        <div class="card">
+            <h3>ACCOUNT_AUDIT</h3>
+            <p>Scanning for system vulnerabilities and keyword gaps. Maximize profitability with 100% precision.</p>
+            <img src="https://i.ibb.co/GvBvs5Kk/image-d53669.png" alt="Audit">
         </div>
-        <div class="stat-card">
-            <h3>4.02%</h3>
-            <p>Average ACOS Achieved</p>
+        <div class="card">
+            <h3>A+ CONTENT</h3>
+            <p>Visual domination. Creating EBC layouts that convert traffic into revenue instantly.</p>
+            <img src="https://i.ibb.co/GvBvs5Kk/image-d53643.png" alt="A+">
         </div>
-        <div class="stat-card">
-            <h3>2+ Years</h3>
-            <p>Expert Experience</p>
-        </div>
-    </section>
-
-    <section class="services">
-        <h2 style="font-size: 3rem;">CORE EXPERTISE</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <i class="fa-solid fa-magnifying-glass-chart"></i>
-                <h4>Account Audit</h4>
-                <p>Finding keyword gaps and health issues.</p>
-                <img src="https://i.ibb.co/GvBvs5Kk/image-d53669.png" alt="Audit">
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-layer-group"></i>
-                <h4>A+ Content</h4>
-                <p>Premium EBC designs for 2x conversions.</p>
-                <img src="https://i.ibb.co/GvBvs5Kk/image-d53643.png" alt="A+ Content">
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-bullseye"></i>
-                <h4>PPC Mastery</h4>
-                <p>Scaling brands with laser-focused bidding.</p>
-            </div>
+        <div class="card" style="border-color: #fff;">
+            <h3 style="color: #fff;">$727K_SALES</h3>
+            <p>Proven track record of scaling Amazon brands to half a million dollars plus in gross revenue.</p>
         </div>
     </section>
 
-    <div class="cta">
-        <h2>Ready to Scale?</h2>
-        <p>Let's turn your Amazon store into a profit machine.</p>
-        <a href="#" class="btn">GET A FREE AUDIT</a>
-    </div>
+    <footer style="margin-top: 100px;">
+        <p>© 2026 ABDULLAH GULL | ALL RIGHTS RESERVED | ENCRYPTED CONNECTION</p>
+    </footer>
 
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80 },
+                "color": { "value": "#ff9900" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5 },
+                "size": { "value": 3 },
+                "line_linked": { "enable": true, "distance": 150, "color": "#ff9900", "opacity": 0.4, "width": 1 },
+                "move": { "enable": true, "speed": 4 }
+            }
+        });
+    </script>
 </body>
 </html>
