@@ -348,50 +348,9 @@ header {
 
         
         <section style="background: #000; padding: 100px 8%; color: #fff; font-family: 'Inter', sans-serif;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 80px; align-items: center;">
+    <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start;">
         
-        <div>
-            <div style="width: 50px; height: 4px; background: #D4AF37; margin-bottom: 25px;"></div>
-            <h2 style="font-size: 42px; font-weight: 900; margin-bottom: 50px; letter-spacing: -1px; text-transform: uppercase;">
-                Your Questions, <br><span style="color: #D4AF37;">Expert Answers</span>
-            </h2>
-
-            <div style="border-bottom: 1px solid #1a1a1a; margin-bottom: 10px;">
-                <button onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block') ? 'none' : 'block'" 
-                        style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                    <span style="font-size: 18px; font-weight: 700;">How can you decrease ACoS without killing organic ranking velocity?</span>
-                    <span style="color: #D4AF37; font-size: 24px; font-weight: 300;">+</span>
-                </button>
-                <div style="display: none; padding: 0 0 25px 0; color: #888; line-height: 1.8; font-size: 15px;">
-                    We follow a 'Precision Pruning' strategy. First, we aggressively negate non-converting terms. Then, we re-allocate wasted budget towards high-converting keywords that possess high-intent search volume. Finally, by boosting conversion rate (CR%), we naturally increase organic rank without relying purely on high PPC bids. This balanced approach protects ranking velocity while scaling profits.
-                </div>
-            </div>
-
-            <div style="border-bottom: 1px solid #1a1a1a; margin-bottom: 10px;">
-                <button onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block') ? 'none' : 'block'" 
-                        style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                    <span style="font-size: 18px; font-weight: 700;">What is your data-backed approach to ranking new product listings?</span>
-                    <span style="color: #D4AF37; font-size: 24px; font-weight: 300;">+</span>
-                </button>
-                <div style="display: none; padding: 0 0 25px 0; color: #888; line-height: 1.8; font-size: 15px;">
-                    We mine Search Query Performance data and competitor gaps to identify high-intent keywords that are often overlooked. Our goal isn't just indexing; it's conversion dominance. By utilizing precise match PPC and conversion-optimized EBC copy from day one, we can often force listings into the top 10 positions for critical search terms within the first 60-90 days.
-                </div>
-            </div>
-
-            <div style="border-bottom: 1px solid #1a1a1a; margin-bottom: 10px;">
-                <button onclick="this.nextElementSibling.style.display = (this.nextElementSibling.style.display === 'block') ? 'none' : 'block'" 
-                        style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
-                    <span style="font-size: 18px; font-weight: 700;">Can optimized EBC/A+ Content truly improve conversion rate metrics?</span>
-                    <span style="color: #D4AF37; font-size: 24px; font-weight: 300;">+</span>
-                </button>
-                <div style="display: none; padding: 0 0 25px 0; color: #888; line-height: 1.8; font-size: 15px;">
-                    Yes, definitively. Modular A+ Content that follows consumer psychology principles reduces bounce rate and directly correlates with a higher "Unit Session Percentage". By visually storytelling your brand’s USP and addressing customer pain points, we transform passive browsers into decisive buyers, often yielding a double-digit percentage increase in conversion within 30 days of implementation.
-                </div>
-            </div>
-
-        </div>
-
-        <div style="position: relative; padding: 30px; border-radius: 20px; background: rgba(255,255,255,0.02); border: 1px solid #1a1a1a; display: flex; align-items: center; justify-content: center; overflow: hidden; height: 500px;">
+        <div style="position: sticky; top: 100px; padding: 30px; border-radius: 20px; background: rgba(255,255,255,0.02); border: 1px solid #1a1a1a; display: flex; align-items: center; justify-content: center; overflow: hidden; height: 500px;">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; position: absolute; top: -50px; left: -50px; width: 120%; height: 120%; transform: rotate(-5deg); filter: blur(10px) opacity(0.1);">
                 <div style="background: url('https://i.ibb.co/YOUR-IMAGE-LINK-1.jpg') center/cover; padding-bottom: 100%; border-radius: 10px;"></div>
                 <div style="background: url('https://i.ibb.co/YOUR-IMAGE-LINK-2.jpg') center/cover; padding-bottom: 100%; border-radius: 10px;"></div>
@@ -412,8 +371,65 @@ header {
             </div>
         </div>
 
+        <div>
+            <div style="width: 50px; height: 4px; background: #D4AF37; margin-bottom: 25px;"></div>
+            <h2 style="font-size: 42px; font-weight: 900; margin-bottom: 50px; letter-spacing: -1px; text-transform: uppercase;">
+                Your Questions, <br><span style="color: #D4AF37;">Expert Answers</span>
+            </h2>
+
+            <div id="faq-container">
+
+                <div style="border-bottom: 1px solid #1a1a1a; margin-bottom: 10px;">
+                    <button onclick="toggleFAQ(this)" style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
+                        <span style="font-size: 18px; font-weight: 700;">How can you decrease ACoS without killing organic ranking velocity?</span>
+                        <span class="sign" style="color: #D4AF37; font-size: 24px;">+</span>
+                    </button>
+                    <div class="content" style="display: none; padding: 0 0 25px 0; color: #888; line-height: 1.8; font-size: 15px;">
+                        We follow a 'Precision Pruning' strategy. First, we aggressively negate non-converting terms. Then, we re-allocate wasted budget towards high-converting keywords that possess high-intent search volume. Finally, by boosting conversion rate (CR%), we naturally increase organic rank without relying purely on high PPC bids. This balanced approach protects ranking velocity while scaling profits.
+                    </div>
+                </div>
+
+                <div style="border-bottom: 1px solid #1a1a1a; margin-bottom: 10px;">
+                    <button onclick="toggleFAQ(this)" style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
+                        <span style="font-size: 18px; font-weight: 700;">What is your data-backed approach to ranking new product listings?</span>
+                        <span class="sign" style="color: #D4AF37; font-size: 24px;">+</span>
+                    </button>
+                    <div class="content" style="display: none; padding: 0 0 25px 0; color: #888; line-height: 1.8; font-size: 15px;">
+                        We mine Search Query Performance data and competitor gaps to identify high-intent keywords that are often overlooked. Our goal isn't just indexing; it's conversion dominance. By utilizing precise match PPC and conversion-optimized EBC copy from day one, we can often force listings into the top 10 positions for critical search terms within the first 60-90 days.
+                    </div>
+                </div>
+
+                <div style="border-bottom: 1px solid #1a1a1a; margin-bottom: 10px;">
+                    <button onclick="toggleFAQ(this)" style="width: 100%; background: none; border: none; padding: 25px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; cursor: pointer; text-align: left;">
+                        <span style="font-size: 18px; font-weight: 700;">Can optimized EBC/A+ Content truly improve conversion rate metrics?</span>
+                        <span class="sign" style="color: #D4AF37; font-size: 24px;">+</span>
+                    </button>
+                    <div class="content" style="display: none; padding: 0 0 25px 0; color: #888; line-height: 1.8; font-size: 15px;">
+                        Yes, definitively. Modular A+ Content that follows consumer psychology principles reduces bounce rate and directly correlates with a higher "Unit Session Percentage". By visually storytelling your brand’s USP and addressing customer pain points, we transform passive browsers into decisive buyers, often yielding a double-digit percentage increase in conversion within 30 days of implementation.
+                    </div>
+                </div>
+
+                </div>
+        </div>
+
     </div>
-</section>>
+</section>
+
+<script>
+function toggleFAQ(btn) {
+    const content = btn.nextElementSibling;
+    const sign = btn.querySelector('.sign');
+    
+    // Toggle Content
+    if (content.style.display === "block") {
+        content.style.display = "none";
+        sign.innerHTML = "+";
+    } else {
+        content.style.display = "block";
+        sign.innerHTML = "-";
+    }
+}
+</script>
     </section>
 </div>
 
