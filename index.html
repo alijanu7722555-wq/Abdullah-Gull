@@ -446,63 +446,64 @@ function handleFaq(btn) {
 }
 </script>
 
-       <section style="background: #000; padding: 80px 5%; color: #fff; font-family: 'Inter', sans-serif; border-top: 1px solid #1a1a1a;">
-    
-    <div style="max-width: 1200px; margin: 0 auto; background: #0a0a0a; border: 1px solid #222; border-radius: 40px; overflow: hidden; display: flex; align-items: stretch; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+      <section style="background: #000; padding: 60px 5%; color: #fff; font-family: 'Inter', sans-serif;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1200px; margin: 0 auto;">
         
-        <div style="flex: 1; padding: 60px; background: #0f0f0f;">
-            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                <div style="width: 40px; height: 2px; background: #D4AF37;"></div>
-                <span style="color: #D4AF37; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; font-size: 14px;">How I Work</span>
-            </div>
-            
-            <h2 style="font-size: 42px; font-weight: 900; line-height: 1.1; margin-bottom: 30px;">
-                My 3-Part <br> <span style="color: #D4AF37;">Game Plan</span>
-            </h2>
-            
-            <p style="color: #888; font-size: 16px; line-height: 1.8; margin-bottom: 40px;">
-                I don’t just "manage" listings—I engineer growth. I dive into your numbers to find exactly where the profit is hidden and then execute a plan to grab it.
-            </p>
-
-            <div id="framework-steps">
-                <div style="display: flex; gap: 18px; align-items: flex-start; margin-bottom: 30px;">
-                    <span style="color: #D4AF37; font-size: 24px;">✔</span>
-                    <div>
-                        <h4 style="margin: 0; font-size: 19px; font-weight: 800; color: #fff;">1: The Deep Dive Audit</h4>
-                        <p style="margin: 5px 0 0 0; color: #666; font-size: 15px;">I tear apart your data to see what’s working, what’s wasting money, and where the competitors are beating you.</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 18px; align-items: flex-start; margin-bottom: 30px;">
-                    <span style="color: #D4AF37; font-size: 24px;">✔</span>
-                    <div>
-                        <h4 style="margin: 0; font-size: 19px; font-weight: 800; color: #fff;">2: High-Impact Execution</h4>
-                        <p style="margin: 5px 0 0 0; color: #666; font-size: 15px;">From aggressive PPC to listing SEO that actually converts, I fix the leaks and start fueling your traffic.</p>
-                    </div>
-                </div>
-
-                <div style="display: flex; gap: 18px; align-items: flex-start;">
-                    <span style="color: #D4AF37; font-size: 24px;">✔</span>
-                    <div>
-                        <h4 style="margin: 0; font-size: 19px; font-weight: 800; color: #fff;">3: Profitable Scaling</h4>
-                        <p style="margin: 5px 0 0 0; color: #666; font-size: 15px;">The end goal is simple: more sales, lower TACOS, and a brand that grows even when you aren't watching it.</p>
-                    </div>
-                </div>
-            </div>
-
-            <a href="#contact" style="display: inline-block; margin-top: 55px; background: #D4AF37; color: #000; padding: 18px 35px; border-radius: 5px; text-decoration: none; font-weight: 900; text-transform: uppercase; font-size: 14px;">
-                Ready to Scale? Let's Talk
-            </a>
-        </div>
-
-        <div style="flex: 1.2; background: #D4AF37; padding: 40px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.15; background-image: repeating-linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000); background-size: 30px 30px;"></div>
-            
-            <div style="position: relative; z-index: 2; width: 115%; box-shadow: -20px 20px 50px rgba(0,0,0,0.4); border-radius: 12px; overflow: hidden; transform: perspective(1200px) rotateY(-8deg);">
-                <img src="https://i.imgur.com/8Nf9z7r.png" alt="Amazon Seller Central Dashboard" style="width: 100%; display: block; border: 5px solid #fff;">
+        <div style="background: #080808; border: 1px solid #D4AF37; padding: 40px; border-radius: 25px;">
+            <div style="background: #D4AF37; color: #000; display: inline-block; padding: 2px 10px; border-radius: 4px; font-weight: 900; font-size: 12px; margin-bottom: 15px;">STRATEGIC PARTNER</div>
+            <h3 style="font-size: 36px; font-weight: 900; line-height: 1.1; margin-bottom: 20px;">I Scale <span style="color: #D4AF37;">Amazon Brands</span> With Data.</h3>
+            <div style="border-top: 1px solid #222; padding-top: 15px;">
+                <p style="margin: 5px 0; color: #888;">Target TACOS: <span style="color: #00ff00; font-weight: 700;">8% - 12%</span></p>
+                <p style="margin: 5px 0; color: #888;">Client Retention: <span style="color: #D4AF37; font-weight: 700;">99% Verified</span></p>
             </div>
         </div>
 
+        <div>
+            <h2 style="font-size: 32px; font-weight: 900; margin-bottom: 20px;">STRATEGIC <span style="color: #D4AF37;">INSIGHTS</span></h2>
+            <div id="faq-container">
+                <div style="border-bottom: 1px solid #222; padding: 10px 0;">
+                    <button onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block'" style="width: 100%; background: none; border: none; color: #fff; text-align: left; cursor: pointer; font-size: 16px; font-weight: 700; display: flex; justify-content: space-between;">
+                        How do you balance aggressive ranking with account health? <span style="color:#D4AF37">+</span>
+                    </button>
+                    <div style="display: none; padding: 10px 0; color: #aaa; font-size: 14px;">I use a "Safe-Velocity" model, focusing on high-intent keywords that drive organic rank without burning cash.</div>
+                </div>
+                <div style="border-bottom: 1px solid #222; padding: 10px 0;">
+                    <button onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block'" style="width: 100%; background: none; border: none; color: #fff; text-align: left; cursor: pointer; font-size: 16px; font-weight: 700; display: flex; justify-content: space-between;">
+                        What is your protocol for managing TACOS during scaling? <span style="color:#D4AF37">+</span>
+                    </button>
+                    <div style="display: none; padding: 10px 0; color: #aaa; font-size: 14px;">I treat PPC as fuel. We scale spend only when organic conversion follows, keeping your total TACOS strictly between 8-12%.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section style="background: #000; padding: 80px 5%; color: #fff; font-family: 'Inter', sans-serif;">
+    <div style="max-width: 1200px; margin: 0 auto; background: #0a0a0a; border: 1px solid #222; border-radius: 40px; overflow: hidden; display: flex; align-items: stretch;">
+        
+        <div style="flex: 1; padding: 50px; background: #0f0f0f;">
+            <h2 style="font-size: 36px; font-weight: 900; margin-bottom: 20px;">My 3-Part <span style="color: #D4AF37;">Game Plan</span></h2>
+            <p style="color: #888; margin-bottom: 30px;">I don’t just manage listings—I engineer growth by finding exactly where your profit is hidden.</p>
+            
+            <div style="margin-bottom: 20px;">
+                <h4 style="color: #fff; margin-bottom: 5px;">1: The Deep Dive Audit</h4>
+                <p style="color: #666; font-size: 14px;">I tear apart your data to find leaks and competitor gaps.</p>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <h4 style="color: #fff; margin-bottom: 5px;">2: High-Impact Execution</h4>
+                <p style="color: #666; font-size: 14px;">Aggressive PPC and SEO that actually converts browsers into buyers.</p>
+            </div>
+            <div>
+                <h4 style="color: #fff; margin-bottom: 5px;">3: Profitable Scaling</h4>
+                <p style="color: #666; font-size: 14px;">Scaling sales while lowering TACOS for long-term brand health.</p>
+            </div>
+        </div>
+
+        <div style="flex: 1; background: #D4AF37; padding: 40px; display: flex; align-items: center; justify-content: center;">
+            <div style="width: 110%; box-shadow: -10px 10px 30px rgba(0,0,0,0.5); border-radius: 10px; overflow: hidden; transform: rotate(-3deg);">
+                <img src="https://placehold.co/600x400/111/D4AF37?text=LIVE+DASHBOARD+$259,000+Sales" alt="Dashboard" style="width: 100%; display: block; border: 4px solid #fff;">
+            </div>
+        </div>
     </div>
 </section>
     </section>
